@@ -5,14 +5,16 @@
   "author": "Eugene Mikeshyn",
   "private": true,
   "scripts": {
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "lintfix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
+    "lint": "eslint --fix  --ext .js,.vue --ignore-path .gitignore .",
     "precommit": "npm run lint",
     "test": "ava",
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "build:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt build --modern=client",
+    "generate:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt generate --modern=client",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
     "bulma": "^0.7.5",
@@ -26,6 +28,7 @@
     "ava": "^1.0.1",
     "babel-eslint": "^10.0.1",
     "browser-env": "^3.2.5",
+    "cross-env": "^5.2.0",
     "eslint": "^5.15.1",
     "eslint-config-prettier": "^4.1.0",
     "eslint-config-standard": ">=12.0.0",
@@ -40,6 +43,7 @@
     "node-sass": "^4.12.0",
     "nodemon": "^1.18.9",
     "prettier": "^1.16.4",
+    "push-dir": "^0.4.1",
     "require-extension-hooks": "^0.3.3",
     "require-extension-hooks-babel": "^0.1.1",
     "require-extension-hooks-vue": "^2.0.0",

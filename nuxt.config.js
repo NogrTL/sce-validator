@@ -1,8 +1,11 @@
 export default {
-  mode: 'universal',
+  mode: 'spa',
   /*
    ** Headers of the page
    */
+  router: {
+    base: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/<repository-name>/' : '/'
+  },
   head: {
     script: [{ src: 'https://kit.fontawesome.com/f5b4b964bb.js' }],
     title: process.env.npm_package_name || '',
