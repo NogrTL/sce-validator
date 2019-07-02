@@ -1,17 +1,21 @@
 <template>
   <div class="section">
-    <div class="container is-fullhd box">
-      <h1 class="title is-1">Hello</h1>
+    <div class="container is-fullhd box has-text-centered">
+      <h1 class="title is-1">
+        Hello
+      </h1>
 
-      <div class="file">
-        <label class="file-label">
+      <div class="file is-large">
+        <label class="file-label" for="csvSelector">
           <input
             id="csvSelector"
             class="file-input"
             type="file"
-            name="csv-select"
+            name="csvSelector"
             accept="text/csv, text/tsv, .csv, .tsv, .txt"
-          />
+            multiple
+            @change="parseFile"
+          >
 
           <span class="file-cta">
             <span class="file-icon">
@@ -29,14 +33,29 @@
 import papa from 'papaparse'
 
 export default {
-  head() {
-    return {
-      script: [
-        {
-          src: 'https://unpkg.com/papaparse@latest/papaparse.min.js'
-        }
-      ]
+  methods: {
+    parseFile(event) {
+      const files = Array.from(event.target.files)
+      files.forEach((file) => {
+        papa.parse(file, {
+          header: true,
+          worker: true,
+          dynamicTyping: true,
+          step(row) {
+            console.log(row.data)
+          },
+          complete() {
+            console.log('Parsing is over!')
+          }
+        })
+      })
     }
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.file {
+  justify-content: center;
+}
+</style>
