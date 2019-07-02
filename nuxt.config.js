@@ -4,7 +4,7 @@ export default {
    ** Headers of the page
    */
   router: {
-    base: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/<repository-name>/' : '/'
+    base: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/sce-validator/' : '/'
   },
   head: {
     script: [{ src: 'https://kit.fontawesome.com/f5b4b964bb.js' }],
