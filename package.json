@@ -1,5 +1,5 @@
 {
-  "name": "sce-validator-webfront",
+  "name": "sce-validator",
   "version": "1.0.0",
   "description": "Web-page that should validate the CSV files for batch import of products for SCE platform",
   "homepage": "https://nogrtl.github.io/sce-validator/",
