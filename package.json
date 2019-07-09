@@ -1,8 +1,17 @@
 {
-  "name": "sce-validator-webfront",
-  "version": "0.0.1",
-  "description": "API and web-page that should validate the CSV files for batch import of products for SCE platrom",
+  "name": "sce-validator",
+  "version": "1.0.0",
+  "description": "Web-page that should validate the CSV files for batch import of products for SCE platform",
+  "homepage": "https://nogrtl.github.io/sce-validator/",
+  "repository ": {
+    "type": "git",
+    "url": "https://github.com/NogrTL/sce-validator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NogrTL/sce-validator/issues/new?&template=bug_report.md"
+  },
   "author": "Eugene Mikeshyn",
+  "license": "MIT",
   "private": true,
   "scripts": {
     "lint": "eslint --fix  --ext .js,.vue --ignore-path .gitignore .",
