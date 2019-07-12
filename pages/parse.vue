@@ -40,13 +40,13 @@ export default {
   components: {
     ResultCard
   },
-  data() {
+  data () {
     return {
       parseResults: []
     }
   },
   methods: {
-    parseFile(event) {
+    parseFile (event) {
       this.parseResults = []
       const files = Array.from(event.target.files)
       files.forEach((file) => {
@@ -57,7 +57,7 @@ export default {
           step: (row) => {
             this.parseResults.push(row.data)
           },
-          complete() {
+          complete () {
             console.log('Parsing is over!')
           }
         })
