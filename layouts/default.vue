@@ -13,9 +13,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-// @charset "utf-8";
-
-// @import "bulma/bulma.sass";
-</style>
