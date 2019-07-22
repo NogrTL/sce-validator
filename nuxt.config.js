@@ -26,7 +26,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['bulma'],
+  css: ['bulma/bulma.sass'],
   /*
    ** Plugins to load before mounting the App
    */
