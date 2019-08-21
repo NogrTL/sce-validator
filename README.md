@@ -8,14 +8,19 @@ Web-page that should validate the CSV files for batch import of products for SCE
 
 ## Install
 
-Clone and install all dependecies
+**Clone and install all dependecies**
 
 ```sh
 git clone git@github.com:NogrTL/sce-validator.git ./sce-validator
+```
+
+**Install**
+
+```sh
 npm install
 ```
 
-or use can CI command as an alternative to `install`
+or
 
 ```sh
 npm ci
