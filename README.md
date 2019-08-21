@@ -4,7 +4,9 @@
 
 Web-page that should validate the CSV files for batch import of products for SCE platrom
 
-## 🏠 [Homepage](https://nogrtl.github.io/sce-validator/)
+## 🏠 Homepages
+[GitHub Pages](https://nogrtl.github.io/sce-validator/)
+[Netlify](https://sce-validator.netlify.com/)
 
 ## Install
 
