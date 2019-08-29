@@ -1,6 +1,6 @@
 # Welcome to SCE Validator 👋
 
-[![Build Status](http://img.shields.io/travis/com/nogrtl/sce-validator/master.svg?style=for-the-badge)](https://travis-ci.com/NogrTL/sce-validator) [![Telegram link](https://img.shields.io/badge/telegram-nogrtl-blue.svg?style=for-the-badge&logo=telegram)](https://t.me/NogrTL)
+[![Build Status](http://img.shields.io/travis/com/nogrtl/sce-validator/master.svg?style=for-the-badge)](https://travis-ci.com/NogrTL/sce-validator) [![Telegram link](https://img.shields.io/badge/telegram-nogrtl-blue.svg?style=for-the-badge&logo=telegram)](https://t.me/NogrTL) [![Netlify Status](https://api.netlify.com/api/v1/badges/f7a0968d-307d-4851-ad4c-e022f5d32d1e/deploy-status)](https://app.netlify.com/sites/sce-validator/deploys)
 
 Web-page that should validate the CSV files for batch import of products for SCE platrom
 
