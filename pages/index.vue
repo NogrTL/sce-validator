@@ -5,10 +5,9 @@
         <h1 class="title is-1">
           SCE Validator
         </h1>
-        <h2
-          class="subtitle"
-        >
-          API and web-page that should validate the CSV files for batch import of products for SCE platrom
+        <h2 class="subtitle">
+          API and web-page that should validate the CSV files for batch import
+          of products for SCE platrom
         </h2>
         <nuxt-link class="button is-primary is-large" to="/parse">
           Start

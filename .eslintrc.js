@@ -5,12 +5,12 @@ module.exports = {
     node: true
   },
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: 'babel-eslint',
+    sourceType: 'module'
   },
   extends: [
     'prettier',
     'prettier/vue',
-    //'plugin:prettier/recommended',
     '@nuxtjs',
     'plugin:nuxt/recommended'
   ],
@@ -18,5 +18,6 @@ module.exports = {
   // add your custom rules here
   rules: {
     "no-console": "off",
+    "space-before-function-paren":"off"
   }
 }

@@ -1,6 +1,6 @@
 <template v-if="row">
   <div class="box">
-    <p v-for="(item,key) in row" :key="key">
+    <p v-for="(item, key) in row" :key="key">
       <span class="tag is-info">{{ key }}</span>
       <span class="content has-background-light">{{ item }}</span>
     </p>
@@ -11,11 +11,13 @@
 export default {
   name: 'ResultCard',
   props: {
-    row: Object
+    row: {
+      type: Object,
+      required: true,
+      default() {
+        return { message: 'Nothing to see here' }
+      }
+    }
   }
 }
 </script>
-
-<style lang="scss">
-
-</style>
