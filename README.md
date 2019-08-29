@@ -6,6 +6,7 @@ Web-page that should validate the CSV files for batch import of products for SCE
 
 ## 🏠 Homepages
 [GitHub Pages](https://nogrtl.github.io/sce-validator/)
+
 [Netlify](https://sce-validator.netlify.com/)
 
 ## Install
