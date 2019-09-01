@@ -5,27 +5,32 @@
         Hello
       </h1>
 
-      <div class="file is-large">
-        <label class="file-label" for="csvSelector">
-          <input
-            id="csvSelector"
-            ref="file-input"
-            class="file-input"
-            type="file"
-            name="csvSelector"
-            accept="text/csv, text/tsv, .csv, .tsv, .txt"
-            multiple
-            @change="addFileNames"
-          >
-          <span class="file-cta">
-            <fai icon="upload" />
-          </span>
-          <span
-            ref="file-name"
-            class="file-name"
-          >Select CSV file to parse</span>
-          </span>
-        </label>
+      <div class="field is-grouped">
+        <div class="control file is-large">
+          <label class="file-label" for="csvSelector">
+            <input
+              id="csvSelector"
+              ref="file-input"
+              class="file-input"
+              type="file"
+              name="csvSelector"
+              accept="text/csv, text/tsv, .csv, .tsv, .txt"
+              multiple
+              @change="addFileNames"
+            >
+            <span class="file-cta">
+              <fai icon="upload" />
+            </span>
+            <span
+              ref="file-name"
+              class="file-name"
+            >Select CSV file to parse</span>
+            </span>
+          </label>
+        </div>
+        <p class="control">
+          <input type="button" value="Parse" class="button is-primary is-large" @click="parseFiles">
+        </p>
       </div>
     </div>
     <div
@@ -55,9 +60,9 @@ export default {
     }
   },
   methods: {
-    parseFile(event) {
+    parseFiles(event) {
       this.parseResults = []
-      const files = Array.from(event.target.files)
+      const files = Array.from(this.$refs['file-input'].files)
       files.forEach((file) => {
         papa.parse(file, {
           header: true,
@@ -87,7 +92,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.file {
+.field {
   justify-content: center;
+}
+
+.file-name{
+  width: 100%;;
 }
 </style>
