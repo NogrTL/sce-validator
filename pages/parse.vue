@@ -9,19 +9,21 @@
         <label class="file-label" for="csvSelector">
           <input
             id="csvSelector"
+            ref="file-input"
             class="file-input"
             type="file"
             name="csvSelector"
             accept="text/csv, text/tsv, .csv, .tsv, .txt"
             multiple
-            @change="parseFile"
+            @change="addFileNames"
           >
-
           <span class="file-cta">
-            <span class="file-icon">
-              <fai icon="upload" />
-            </span>
-            <span class="file-label">Select CSV file to parse</span>
+            <fai icon="upload" />
+          </span>
+          <span
+            ref="file-name"
+            class="file-name"
+          >Select CSV file to parse</span>
           </span>
         </label>
       </div>
@@ -69,6 +71,16 @@ export default {
           }
         })
       })
+    },
+    addFileNames(event) {
+      const files = Array.from(event.target.files)
+      if (files.length > 0) {
+        const fileLabel = this.$refs['file-name']
+        fileLabel.innerHTML = new Intl.ListFormat('en-US', {
+          style: 'short',
+          type: 'conjunction'
+        }).format(files.map(file => file.name))
+      }
     }
   }
 }
