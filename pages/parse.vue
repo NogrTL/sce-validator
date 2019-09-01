@@ -19,7 +19,7 @@
 
           <span class="file-cta">
             <span class="file-icon">
-              <i class="fas fa-upload" />
+              <fai icon="upload" />
             </span>
             <span class="file-label">Select CSV file to parse</span>
           </span>

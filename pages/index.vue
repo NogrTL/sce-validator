@@ -10,7 +10,10 @@
           of products for SCE platrom
         </h2>
         <nuxt-link class="button is-primary is-large" to="/parse">
-          Start
+          <span class="icon is-large">
+            <fai :icon="['fas', 'arrow-alt-circle-up']" />
+          </span>
+          <span>Start</span>
         </nuxt-link>
       </div>
     </div>

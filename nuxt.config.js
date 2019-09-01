@@ -7,7 +7,6 @@ export default {
     base: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/sce-validator/' : '/'
   },
   head: {
-    script: [{ src: 'https://kit.fontawesome.com/f5b4b964bb.js' }],
     title: process.env.npm_package_name || '',
     meta: [
       { charset: 'utf-8' },
@@ -26,11 +25,15 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['bulma/bulma.sass'],
+  css: [
+    'bulma/bulma.sass',
+    '@fortawesome/fontawesome-svg-core/styles.css'],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    '~/plugins/fontawesome.js'
+  ],
   /*
    ** Nuxt.js modules
    */
