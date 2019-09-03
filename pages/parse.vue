@@ -33,26 +33,18 @@
         </p>
       </div>
     </div>
-    <div
-      v-if="parseResults && parseResults.length > 0"
-      class="container is-fullhd"
-    >
-      <ResultCard
-        v-for="(item, index) in parseResults"
-        :key="index"
-        :row="item"
-      />
-    </div>
+    <nuxt-child :results="parseResults" />
+  </div>
   </div>
 </template>
 
 <script>
 import papa from 'papaparse'
-import ResultCard from '~~/components/ResultCard.vue'
+// import ResultCard from '~~/components/ResultCard.vue'
 
 export default {
   components: {
-    ResultCard
+    // ResultCard
   },
   data() {
     return {
@@ -73,12 +65,14 @@ export default {
           },
           complete: () => {
             this.$toast.success('Parsing complete', {
-              icon: { name: 'check',
-                after: true }
+              icon: { name: 'check', after: true }
             })
+            this.$router.push({ path: '/parse/results', append: false })
           },
           error: (error, file, inputElem, reason) => {
-            this.$toast.error(`Opps..We encountered error ${error} while parsing ${file} becase of ${reason}`)
+            this.$toast.error(
+              `Opps..We encountered error ${error} while parsing ${file} becase of ${reason}`
+            )
           }
         })
       })
