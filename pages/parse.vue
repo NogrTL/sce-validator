@@ -76,11 +76,17 @@ export default {
           header: true,
           worker: true,
           dynamicTyping: true,
-          step: (row) => {
+          step: (row, inputElem) => {
             this.parseResults.push(row.data)
           },
-          complete() {
-            console.log('Parsing is over!')
+          complete: () => {
+            this.$toast.success('Parsing complete', {
+              icon: { name: 'check',
+                after: true }
+            })
+          },
+          error: (error, file, inputElem, reason) => {
+            this.$toast.error(`Opps..We encountered error ${error} while parsing ${file} becase of ${reason}`)
           }
         })
       })
