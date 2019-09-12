@@ -27,7 +27,8 @@ export default {
    */
   css: [
     'bulma/bulma.sass',
-    '@fortawesome/fontawesome-svg-core/styles.css'],
+    '@fortawesome/fontawesome-svg-core/styles.css'
+  ],
   /*
    ** Plugins to load before mounting the App
    */
@@ -37,7 +38,16 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/eslint-module'],
+  modules: [
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/toast'
+  ],
+  toast: {
+    position: 'bottom-right',
+    iconPack: 'fontawesome',
+    duration: 2000,
+    keepOnHover: true
+  },
   /*
    ** Build configuration
    */
@@ -45,5 +55,10 @@ export default {
     /*
      ** You can extend webpack config here
      */
+    extend(config, ctx) {
+      if (ctx.isDev) {
+        config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map'
+      }
+    }
   }
 }
