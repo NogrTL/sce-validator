@@ -1,47 +1,55 @@
 <template>
-  <div class="section">
-    <div class="container is-fullhd box has-text-centered">
-      <h1 class="title is-1">
-        Hello
-      </h1>
+  <div>
+    <div class="container is-fullhd">
+      <div class="box has-text-centered">
+        <h1 class="title is-1">
+          Hello
+        </h1>
 
-      <div class="field is-grouped">
-        <div class="control file is-large">
-          <label class="file-label" for="csvSelector">
-            <input
-              id="csvSelector"
-              ref="file-input"
-              class="file-input"
-              type="file"
-              name="csvSelector"
-              accept="text/csv, text/tsv, .csv, .tsv, .txt"
-              multiple
-              @change="addFileNames"
-            >
-            <span class="file-cta">
-              <fai icon="upload" />
-            </span>
-            <span
-              ref="file-name"
-              class="file-name"
-            >Select CSV file to parse</span>
-            </span>
-          </label>
+        <div class="field">
+          <div class="control">
+            <div class="file has-name is-large is-fullwidth">
+              <label class="file-label" for="csvSelector">
+                <input
+                  id="csvSelector"
+                  ref="file-input"
+                  class="file-input"
+                  type="file"
+                  name="csvSelector"
+                  accept="text/csv, text/tsv, .csv, .tsv, .txt"
+                  multiple
+                  @change="addFileNames"
+                >
+                <p class="file-cta">
+                  <span class="file-icon"><fai icon="upload" /></span>
+                  <span class="file-label">Select file</span>
+                </p>
+                <span
+                  ref="file-name"
+                  class="file-name"
+                >...
+                </span>
+              </label>
+            </div>
+          </div>
         </div>
-        <p class="control">
-          <input type="button" value="Parse" class="button is-primary is-large" @click="parseFiles">
-        </p>
+        <div class="field">
+          <div class="control has-text-centered">
+            <input type="button" value="Parse" class="button is-primary is-large" @click="parseFiles">
+          </div>
+        </div>
       </div>
-    </div>
-    <div
-      v-if="parseResults && parseResults.length > 0"
-      class="container is-fullhd"
-    >
-      <ResultCard
-        v-for="(item, index) in parseResults"
-        :key="index"
-        :row="item"
-      />
+
+      <div
+        v-if="parseResults && parseResults.length > 0"
+        class="box"
+      >
+        <ResultCard
+          v-for="(item, index) in parseResults"
+          :key="index"
+          :row="item"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -90,13 +98,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-.field {
-  justify-content: center;
-}
-
-.file-name{
-  width: 100%;;
-}
-</style>
