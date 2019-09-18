@@ -33,7 +33,7 @@
     "@nuxtjs/toast": "^3.2.1",
     "bulma": "^0.7.5",
     "nuxt": "^2.9.2",
-    "papaparse": "^5.0.2"
+    "papaparse": "^5.1.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.1.2",
