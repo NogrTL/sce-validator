@@ -33,7 +33,6 @@
         </p>
       </div>
     </div>
-    <nuxt-child :results="parseResults" />
   </div>
 </template>
 
@@ -63,7 +62,7 @@ export default {
             this.$toast.success('Parsing complete', {
               icon: { name: 'check', after: true }
             })
-            this.$router.push({ path: '/parse/results', append: false })
+            this.$router.push({ name: 'results', params: { results: this.parseResults }, append: false })
           },
           error: (error, file, inputElem, reason) => {
             this.$toast.error(

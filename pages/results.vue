@@ -19,12 +19,9 @@ export default {
   components: {
     ResultCard
   },
-  props: {
-    results: {
-      type: Array,
-      default() {
-        return { message: 'Nothing to see here' }
-      }
+  data() {
+    return {
+      results: this.$route.params.results
     }
   }
 }
