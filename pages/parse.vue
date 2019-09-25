@@ -39,29 +39,14 @@
           </div>
         </div>
       </div>
-
-      <div
-        v-if="parseResults && parseResults.length > 0"
-        class="box"
-      >
-        <ResultCard
-          v-for="(item, index) in parseResults"
-          :key="index"
-          :row="item"
-        />
-      </div>
     </div>
   </div>
 </template>
 
 <script>
 import papa from 'papaparse'
-import ResultCard from '~~/components/ResultCard.vue'
 
 export default {
-  components: {
-    ResultCard
-  },
   data() {
     return {
       parseResults: []
@@ -69,24 +54,27 @@ export default {
   },
   methods: {
     parseFiles(event) {
-      this.parseResults = []
       const files = Array.from(this.$refs['file-input'].files)
       files.forEach((file) => {
+        const fileResults = { name: file.name, data: [] }
         papa.parse(file, {
           header: true,
           worker: true,
           dynamicTyping: true,
           step: (row, inputElem) => {
-            this.parseResults.push(row.data)
+            fileResults.data.push(row.data)
           },
           complete: () => {
+            this.parseResults.push(fileResults)
             this.$toast.success('Parsing complete', {
-              icon: { name: 'check',
-                after: true }
+              icon: { name: 'check', after: true }
             })
+            this.$router.push({ name: 'results', params: { results: this.parseResults }, append: false })
           },
           error: (error, file, inputElem, reason) => {
-            this.$toast.error(`Opps..We encountered error ${error} while parsing ${file} becase of ${reason}`)
+            this.$toast.error(
+              `Opps..We encountered error ${error} while parsing ${file} becase of ${reason}`
+            )
           }
         })
       })
