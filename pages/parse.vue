@@ -35,17 +35,12 @@
     </div>
     <nuxt-child :results="parseResults" />
   </div>
-  </div>
 </template>
 
 <script>
 import papa from 'papaparse'
-// import ResultCard from '~~/components/ResultCard.vue'
 
 export default {
-  components: {
-    // ResultCard
-  },
   data() {
     return {
       parseResults: []
@@ -53,17 +48,18 @@ export default {
   },
   methods: {
     parseFiles(event) {
-      this.parseResults = []
       const files = Array.from(this.$refs['file-input'].files)
       files.forEach((file) => {
+        const fileResults = { name: file.name, data: [] }
         papa.parse(file, {
           header: true,
           worker: true,
           dynamicTyping: true,
           step: (row, inputElem) => {
-            this.parseResults.push(row.data)
+            fileResults.data.push(row.data)
           },
           complete: () => {
+            this.parseResults.push(fileResults)
             this.$toast.success('Parsing complete', {
               icon: { name: 'check', after: true }
             })
