@@ -21,7 +21,7 @@
                   @change="addFileNames"
                 >
                 <p class="file-cta">
-                  <span class="file-icon"><fai icon="upload" /></span>
+                  <span class="file-icon"><i class="fas fa-upload" /></span>
                   <span class="file-label">Select file</span>
                 </p>
                 <span
