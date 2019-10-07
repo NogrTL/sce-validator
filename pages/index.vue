@@ -11,7 +11,7 @@
         </h2>
         <nuxt-link class="button is-primary is-large" to="/parse">
           <span class="icon is-large">
-            <fai :icon="['fas', 'arrow-alt-circle-up']" />
+            <i class="fas fa-arrow-circle-up" />
           </span>
           <span>Start</span>
         </nuxt-link>
