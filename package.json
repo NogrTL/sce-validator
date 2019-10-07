@@ -18,9 +18,9 @@
     "precommit": "npm run lint",
     "test": "ava",
     "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate",
+    "build": "nuxt build --modern=client",
+    "start": "nuxt start --modern=client",
+    "generate": "nuxt generate --modern=client",
     "build:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt build --modern=client",
     "generate:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt generate --modern=client",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
