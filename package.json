@@ -29,7 +29,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/free-brands-svg-icons": "^5.11.2",
     "@fortawesome/free-solid-svg-icons": "^5.11.2",
-    "@nuxtjs/toast": "^3.2.1",
+    "@nuxtjs/toast": "^3.3.0",
     "bulma": "^0.8.0",
     "nuxt": "^2.10.2",
     "papaparse": "^5.1.0"
