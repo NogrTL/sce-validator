@@ -55,7 +55,7 @@
     "eslint-plugin-vue": "^6.2.2",
     "node-sass": "^4.13.1",
     "nodemon": "^2.0.3",
-    "prettier": "^2.0.2",
+    "prettier": "^2.0.5",
     "push-dir": "^0.4.1",
     "require-extension-hooks": "^0.3.3",
     "require-extension-hooks-babel": "^1.0.0",
