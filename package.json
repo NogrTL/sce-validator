@@ -30,7 +30,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@nuxtjs/toast": "^3.3.0",
-    "bulma": "^0.8.1",
+    "bulma": "^0.8.2",
     "nuxt": "^2.12.2",
     "papaparse": "^5.2.0"
   },
