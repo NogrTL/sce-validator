@@ -37,7 +37,7 @@
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.2",
     "@nuxtjs/eslint-module": "^2.0.0",
-    "@vue/test-utils": "^1.0.2",
+    "@vue/test-utils": "^1.0.3",
     "ava": "^3.8.2",
     "babel-eslint": "^10.1.0",
     "browser-env": "^3.3.0",
