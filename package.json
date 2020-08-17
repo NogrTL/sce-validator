@@ -31,7 +31,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
     "@nuxtjs/toast": "^3.3.1",
     "bulma": "^0.9.0",
-    "nuxt": "^2.14.1",
+    "nuxt": "^2.14.3",
     "papaparse": "^5.2.0"
   },
   "devDependencies": {
