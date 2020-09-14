@@ -27,7 +27,7 @@ export default {
    */
   css: [
     'bulma/bulma.sass',
-    '@fortawesome/fontawesome-svg-core/styles.css'
+    '@fortawesome/fontawesome-free/css/all.css'
   ],
   /*
    ** Plugins to load before mounting the App
